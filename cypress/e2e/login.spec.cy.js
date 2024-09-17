@@ -1,3 +1,4 @@
+import { faker } from '@faker-js/faker'
 import userData from '../fixtures/user-data.json'
 
 describe('Login - Sucess', () => {
@@ -7,8 +8,14 @@ describe('Login - Sucess', () => {
     passwordField: "#password" ,
     loginButton: "button" ,
     sectionTitleNewTransaction: "[data-test='nav-public-tab']" ,
-    wrongCredentialAlert: "[role='alert']" 
-  
+    wrongCredentialAlert: "[role='alert']" ,
+    registerButton: "[data-test='signup']" ,
+    firstNameField: "#firstName" ,
+    lastNameField: "#lastName" ,
+    registerUsernameField: "#username" ,
+    registerPasswordField: "#password" ,
+    confirmationPasswordField: "#confirmPassword" ,
+    signupButton: '[data-test="signup-submit"]'
   }
 
   it('Must log in with a valid username', () => {
@@ -27,4 +34,17 @@ describe('Login - Sucess', () => {
     cy.get(selectorsList.loginButton).click()
     cy.get(selectorsList.wrongCredentialAlert)
  }); 
+
+ it('Successful new user registration', () => {
+    cy.visit('')
+    cy.get(selectorsList.registerButton).click()
+    cy.get(selectorsList.firstNameField).type(faker.person.firstName())
+    cy.get(selectorsList.lastNameField).type(faker.person.lastName())
+    cy.get(selectorsList.usernameField).type('TestingQA')
+    cy.get(selectorsList.registerPasswordField).type('Testing')
+    cy.get(selectorsList.confirmationPasswordField).type('Testing')
+    cy.get(selectorsList.signupButton).click()
+    cy.get("main").should('be.visible')
+   
+ });
 })
