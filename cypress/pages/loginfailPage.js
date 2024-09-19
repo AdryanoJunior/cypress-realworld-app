@@ -10,7 +10,7 @@ class LoginFailPage {
         return selectors
     }
 
-    acessLoginPage() {
+    accessLoginPage() {
         cy.visit('')
     }
 

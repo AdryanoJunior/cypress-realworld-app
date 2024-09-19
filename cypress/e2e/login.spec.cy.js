@@ -4,7 +4,7 @@ import LoginFailPage from '../pages/loginfailPage'
 import RegisterPage from '../pages/registerPage'
 import RegisterFailPage from '../pages/registerfailPage'
 
-describe('Login - Sucess', () => {
+describe('Real World App - Tests', () => {
 
   const loginPage = new LoginPage
   const loginFailPage = new LoginFailPage
@@ -13,7 +13,7 @@ describe('Login - Sucess', () => {
   
 
   it('Must log in with a valid username', () => {
-    loginPage.acessLoginPage()
+    loginPage.accessLoginPage()
     loginPage.loginWithUser(userData.userSucess.username, userData.userSucess.password)
 
     loginPage.containsPage()
@@ -22,7 +22,7 @@ describe('Login - Sucess', () => {
   })
 
  it('Trying to log in with invalid credentials', () => {
-    loginFailPage.acessLoginPage()
+    loginFailPage.accessLoginPage()
     loginFailPage.loginWithUserFail(userData.UserFail.username, userData.UserFail.password)
     
     loginFailPage.wrongAlertPage()
@@ -30,7 +30,7 @@ describe('Login - Sucess', () => {
  }); 
 
  it('Successful new user registration', () => {
-  registerPage.acessRegisterPage()
+  registerPage.accessRegisterPage()
 
   registerPage.creatingUser() 
 
@@ -41,7 +41,7 @@ describe('Login - Sucess', () => {
  });
 
  it('Should display error messages when trying to register a new user without filling in all mandatory information', () => {
-     registerFailPage.acessRegisterPage()
+     registerFailPage.accessRegisterPage()
      registerFailPage.errorMessagesPage()
     
  });

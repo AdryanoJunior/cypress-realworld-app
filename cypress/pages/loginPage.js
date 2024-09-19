@@ -12,7 +12,7 @@ class LoginPage {
     }
 
 
-    acessLoginPage() {
+    accessLoginPage() {
         cy.visit('')
     }
 

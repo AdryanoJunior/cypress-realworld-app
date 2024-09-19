@@ -14,7 +14,7 @@ class RegisterPage {
         return selectors
     }
 
-    acessRegisterPage() {
+    accessRegisterPage() {
         cy.visit('')
         cy.get(this.selectorsList().registerButton).click()
     }
