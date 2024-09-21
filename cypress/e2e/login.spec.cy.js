@@ -18,7 +18,7 @@ describe('Real World App - Tests', () => {
 
     loginPage.containsPage()
     
-    cy.get("[data-test='main']").should('be.visible')
+    loginPage.layoutVisible()
   })
 
  it('Trying to log in with invalid credentials', () => {

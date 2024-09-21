@@ -25,6 +25,10 @@ class LoginPage {
     containsPage() {
         cy.get(this.selectorsList().sectionTitleNewTransaction).contains('Everyone')
     }
+
+    layoutVisible() {
+        cy.get("[data-test='main']").should('be.visible')
+    }
     
 }
 
